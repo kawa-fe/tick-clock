@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+, "app/components/AlarmView.js", "app/App.js", "app/(tabs)/index.tsx", "app/components/TimeWeather.tsx", "app/(tabs)/two.tsx", "app/components/Task.js"  ]
 }

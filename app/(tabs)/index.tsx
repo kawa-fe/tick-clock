@@ -1,31 +1,51 @@
-import { StyleSheet } from 'react-native';
+import React from "react";
+import AnalogClock from "../components/AnalogClock";
+import { ImageBackground, ScrollView, View, StyleSheet } from "react-native";
+import TimeWeather from "../components/TimeWeather";
+import { BlurView } from "expo-blur";
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
-
-export default function TabOneScreen() {
+const index = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
-    </View>
+    <ImageBackground
+      source={require("../../assets/images/background1.jpg")}
+      style={styles.background}
+    >
+      <BlurView intensity={30} style={styles.blurContainer}>
+        <ScrollView
+          contentContainerStyle={{
+            flexGrow: 1,
+          }}
+          keyboardShouldPersistTaps="handled"
+        >
+          <View
+            style={{
+              flex: 1,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <AnalogClock />
+          </View>
+          <TimeWeather />
+        </ScrollView>
+      </BlurView>
+    </ImageBackground>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  blurContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    height: "100%",
   },
 });
+
+export default index;

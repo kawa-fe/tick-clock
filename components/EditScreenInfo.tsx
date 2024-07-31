@@ -1,44 +1,66 @@
-import React from 'react';
-import { StyleSheet } from 'react-native';
+import React from "react";
+import { StyleSheet } from "react-native";
 
-import { ExternalLink } from './ExternalLink';
-import { MonoText } from './StyledText';
-import { Text, View } from './Themed';
+import { ExternalLink } from "./ExternalLink";
+import { Text, View } from "./Themed";
 
-import Colors from '@/constants/Colors';
+import Colors from "@/constants/Colors";
+import {
+  AntDesign,
+  FontAwesome5,
+  Fontisto,
+  Ionicons,
+  MaterialCommunityIcons,
+} from "@expo/vector-icons";
 
 export default function EditScreenInfo({ path }: { path: string }) {
   return (
-    <View>
-      <View style={styles.getStartedContainer}>
+    <View style={{ backgroundColor: "transparent" }}>
+      <View
+        style={[styles.getStartedContainer, { backgroundColor: "transparent" }]}
+      >
         <Text
           style={styles.getStartedText}
-          lightColor="rgba(0,0,0,0.8)"
-          darkColor="rgba(255,255,255,0.8)">
-          Open up the code for this screen:
+          lightColor="rgba(36, 59, 85, 0.9)"
+          darkColor="rgba(255,255,255,0.9)"
+        >
+          Designd With:
         </Text>
-
-        <View
-          style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
-          darkColor="rgba(255,255,255,0.05)"
-          lightColor="rgba(0,0,0,0.05)">
-          <MonoText>{path}</MonoText>
-        </View>
-
-        <Text
-          style={styles.getStartedText}
-          lightColor="rgba(0,0,0,0.8)"
-          darkColor="rgba(255,255,255,0.8)">
-          Change any of the text, save the file, and your app will automatically update.
+        <Text style={styles.text}>
+          <FontAwesome5 name="java" size={24} color="rgba(36, 59, 85, 0.9)" />{" "}
+          Java{" "}
+          <Ionicons
+            name="logo-javascript"
+            size={24}
+            color="rgba(36, 59, 85, 0.9)"
+          />{" "}
+          <MaterialCommunityIcons
+            name="language-typescript"
+            size={24}
+            color="rgba(36, 59, 85, 0.9)"
+          />{" "}
+          <Fontisto name="react" size={24} color="rgba(36, 59, 85, 0.9)" />{" "}
+          <AntDesign name="antdesign" size={24} color="rgba(36, 59, 85, 0.9)" />{" "}
         </Text>
       </View>
 
-      <View style={styles.helpContainer}>
-        <ExternalLink
-          style={styles.helpLink}
-          href="https://docs.expo.io/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet">
+      <View style={[styles.helpContainer, { backgroundColor: "transparent" }]}>
+        <ExternalLink style={styles.helpLink} href="http://47.99.32.48:12445/">
+          {" "}
+          <AntDesign name="home" size={24} color="rgba(36, 59, 85, 0.9)" />{" "}
           <Text style={styles.helpLinkText} lightColor={Colors.light.tint}>
-            Tap here if your app doesn't automatically update after making changes
+            Tap here to my home .
+          </Text>
+        </ExternalLink>
+        <ExternalLink style={styles.helpLink} href="http://47.99.32.48:8090/">
+          {" "}
+          <FontAwesome5
+            name="blog"
+            size={24}
+            color="rgba(36, 59, 85, 0.9)"
+          />{" "}
+          <Text style={styles.helpLinkText} lightColor={Colors.light.tint}>
+            Tap here to my blog .
           </Text>
         </ExternalLink>
       </View>
@@ -48,7 +70,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
 
 const styles = StyleSheet.create({
   getStartedContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     marginHorizontal: 50,
   },
   homeScreenFilename: {
@@ -61,17 +83,22 @@ const styles = StyleSheet.create({
   getStartedText: {
     fontSize: 17,
     lineHeight: 24,
-    textAlign: 'center',
+    textAlign: "center",
+    marginBottom: 10,
   },
   helpContainer: {
     marginTop: 15,
     marginHorizontal: 20,
-    alignItems: 'center',
+    alignItems: "center",
   },
   helpLink: {
     paddingVertical: 15,
   },
   helpLinkText: {
-    textAlign: 'center',
+    textAlign: "center",
+  },
+  text: {
+    color: "rgba(36, 59, 85, 0.9)",
+    textAlign: "center",
   },
 });
