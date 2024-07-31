@@ -2,9 +2,11 @@ Tick-Clock
 It is a time management software supports web, ios, and Android.
 Your daily life partner.
 
+我的大一课设：
+滴答时钟--是一个简洁的时间管家。
 Functions：
 1.每隔一分钟切换一次壁纸，支持自定义壁纸，支持自定义头像。
-2.点击每日一言切换名言。（我用的是一言的api）
+2.点击每日一言切换名言。（我用的是一言的api可以自定义）
 3.点击专注时钟按钮到专注计时页面。
 4.时钟界面显示数字时钟和圆盘时钟，显示日期星期，根据所在定位显示所在地天气。（支持自定义切换API ，我用的是高德地图的api）
 5.To DO List界面可编辑当日的Task，默认有两个task可以删掉。
